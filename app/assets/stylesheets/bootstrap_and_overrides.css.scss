@@ -1,5 +1,10 @@
+$navbarHeight: 50px;
 @import "bootstrap";
+body {
+
+}
 @import "bootstrap-responsive";
-.navbar-inner{
-  background-color: #ffffff;
+.top-bar{
+  padding-top: 15px;
+  font-size: 18px;
 }

@@ -5,7 +5,10 @@ gem 'therubyracer'
 gem 'execjs'
 gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass'
+gem 'bootswatch-rails'
 gem 'devise'
+gem 'simple_form'
+gem 'country_select'
 group :development do
   gem 'sqlite3'
 end

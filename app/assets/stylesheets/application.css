@@ -11,6 +11,8 @@
  *
  *= require_self
  *= require morris
- *= require_tree .
+ *= require home
+ *= require custom
+ *= require bootstrap.min
  */
 

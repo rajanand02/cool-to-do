@@ -1,21 +1,23 @@
-<h1>Listing sales</h1>
-<div class="row-fluid">
-  <div class="span5">
-    <%= pie_chart @sales.map { |s| [s.name, s.price] } %>
-  </div>
-  <div class="span7">
-    <%= bar_chart @sales.map { |s| [s.name, s.price] }%>
-  </div>
-</div><br/>
-<div class="row-fluid">
-  <div class="span5">
-    <%= line_chart @sales.map { |s| [s.id, s.number]} %>
-  </div>
-  <div class="span7">
-    <%= column_chart @sales.map { |s| [s.name, s.price] } %>
-  </div>
-</div><br/>
-<%= area_chart @sales.map { |s| [s.number, s.price] }  %>
+<div class="container">
+  <h1>Listing sales</h1>
+  <div class="row-fluid">
+    <div class="span5">
+      <%= pie_chart @sales.map { |s| [s.name, s.price] } %>
+    </div>
+    <div class="span7">
+      <%= bar_chart @sales.map { |s| [s.name, s.price] }%>
+    </div>
+  </div><br/>
+  <div class="row-fluid">
+    <div class="span5">
+      <%= line_chart @sales.map { |s| [s.id, s.number]} %>
+    </div>
+    <div class="span7">
+      <%= column_chart @sales.map { |s| [s.name, s.price] } %>
+    </div>
+  </div><br/>
+  <%= area_chart @sales.map { |s| [s.number, s.price] }  %>
+</div>
 <table class= "table table-hover">
   <thead>
     <tr>

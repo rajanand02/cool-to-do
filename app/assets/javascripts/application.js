@@ -14,5 +14,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require highcharts
+//= require highcharts/highcharts-more
+//= require highcharts/adapters/mootools
+//= require highcharts/adapters/prototype
+//= require highcharts/adapters/standalone
+//= require highcharts/modules/canvas-tools
+//= require highcharts/modules/data
+//= require highcharts/modules/exporting
+//= require highcharts/modules/funnel
+//= require highcharts/themes/grid
 //= require turbolinks
 //= require_tree .

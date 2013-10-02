@@ -1,0 +1,49 @@
+<h1>Listing sales</h1>
+<div class="row-fluid">
+  <div class="span5">
+    <%= pie_chart @sales.map { |s| [s.name, s.price] } %>
+  </div>
+  <div class="span7">
+    <%= bar_chart @sales.map { |s| [s.name, s.price] }%>
+  </div>
+</div><br/>
+<div class="row-fluid">
+  <div class="span5">
+    <%= line_chart @sales.map { |s| [s.id, s.number]} %>
+  </div>
+  <div class="span7">
+    <%= column_chart @sales.map { |s| [s.name, s.price] } %>
+  </div>
+</div><br/>
+<%= area_chart @sales.map { |s| [s.number, s.price] }  %>
+<table class= "table table-hover">
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Name</th>
+      <th>Created_at</th>
+      <th>Price</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sales.each do |sale| %>
+      <tr>
+        <td><%= sale.number %></td>
+        <td><%= sale.name %></td>
+        <td><%= sale.created_at.to_date %></td>
+        <td><%= sale.price %></td>
+        <td><%= link_to 'Show', sale %></td>
+        <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
+        <td><%= link_to 'Destroy', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sale', new_sale_path %>

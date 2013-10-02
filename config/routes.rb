@@ -1,5 +1,7 @@
 TodoList::Application.routes.draw do
 
+  resources :sales
+
   resources :todos
 
   get "static_page/new"

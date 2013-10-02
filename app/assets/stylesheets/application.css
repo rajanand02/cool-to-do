@@ -12,3 +12,8 @@
  *= require_self
  *= require_tree .
  */
+// Responsive styles go here in case you want them
+@import "bootstrap-responsive";
+// Then bootstrap itself
+@import "bootstrap";
+

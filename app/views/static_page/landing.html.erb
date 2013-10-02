@@ -1,8 +1,15 @@
-<div class="row">
-
-  <div class="row-fluid">
-    <div class="span5 pull-left">
-      <%= image_tag "todo.png", :class => "todo_img" %>
-    </div>
+<div class="container">
+  <div class="welcome_text">
+    <h1>Welcome Aboard</h1>
+    <h3>Lets create some cool Charts and Todos</h3>
   </div>
 </div>
+  <div class="row-fluid">
+    <div class="span6 pull-left">
+      <%= link_to image_tag("todo2.png",class: "landing_todo_img"), new_todo_path %>
+    </div>
+  <div class="span6">
+    <%= link_to image_tag("pie.png", class: "landing_pie_img"), new_sale_path %>
+  </div>
+    
+  </div>

@@ -1,7 +1,18 @@
-@import "bootstrap";
-input{
-  height: 40px;
-}
 .navbar_text{
   padding: 8px;
+}
+.welcome_text{
+ text-align: center;
+ margin-bottom: 30px;
+}
+.landing_pie_img{
+  height: 231px;
+  width: 84%;
+}
+.landing_todo_img{
+  height: 235px;
+  width: 93%;
+}
+body{
+  background-color: #EAF1F1 !important;
 }

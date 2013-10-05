@@ -1,3 +1,4 @@
+@import "bootstrap";
 .navbar_text{
   padding: 8px;
 }
@@ -18,4 +19,7 @@ body{
 }
 input{
   height: 30px !important;
+}
+.btn{
+  height:40%;
 }

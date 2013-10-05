@@ -56,8 +56,7 @@ Devise.setup do |config|
 
   # Tell if authentication through HTTP Auth is enabled. False by default.
   # It can be set to an array that will enable http authentication only for the
-  # given strategies, for example, `config.http_authenticatable = [:token]` will
-  # enable it only for token authentication. The supported strategies are:
+  # given strategies, for example, `config.http_authenticatable = [:token]`logged  # enable it only for token authentication. The supported strategies are:
   # :database      = Support basic authentication with authentication key + password
   # :token         = Support basic authentication with token authentication key
   # :token_options = Support token authentication with options as defined in

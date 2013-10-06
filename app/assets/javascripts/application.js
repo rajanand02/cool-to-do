@@ -13,7 +13,8 @@
 // Loads all Bootstrap javascripts
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
+//= require flatly/loader
+//= require flatly/bootswatch
 //= require highcharts
 //= require highcharts/highcharts-more
 //= require highcharts/adapters/mootools
@@ -25,4 +26,4 @@
 //= require highcharts/modules/funnel
 //= require highcharts/themes/grid
 //= require turbolinks
-//= require_tree .
+

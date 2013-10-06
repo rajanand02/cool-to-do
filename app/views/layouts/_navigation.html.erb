@@ -10,8 +10,8 @@
     <div class="navbar-collapse collapse" id="navbar-main">
       <%= link_to 'Cool-Todo', root_path, :method => :get, :class => "navbar-brand" %>
       <ul class="nav navbar-nav navbar-right navbar_text">
-        <% if !user_signed_in?  %>
           <li><%= link_to 'Home', root_path %> </li>
+        <% if !user_signed_in?  %>
           <li><%= link_to 'Sign up', new_user_registration_path %></li>
           <li><%= link_to 'Sign in', new_user_session_path %></li>
         <% end %>

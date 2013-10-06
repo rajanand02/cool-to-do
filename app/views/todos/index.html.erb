@@ -7,6 +7,7 @@
     <tr>
       <th>Title</th>
       <th>List</th>
+      <th>Category</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,7 +19,7 @@
       <tr>
         <td><%= todo.title %></td>
         <td><%= todo.list %></td>
-        <td><%# todo.category %></td>
+        <td><%= todo.category %></td>
         <td><%= link_to 'Show', todo %></td>
         <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
         <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>

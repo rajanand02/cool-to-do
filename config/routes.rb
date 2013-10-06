@@ -1,5 +1,9 @@
 TodoList::Application.routes.draw do
 
+  resources :list_items
+
+  resources :categories
+
   resources :sales
 
   resources :todos

@@ -1,14 +1,15 @@
-@import 'bootstrap';
+//@import 'bootstrap';
 .navbar_text{
-  padding: 8px;
+  color: white;
+  margin-right: 80px !important;
 }
 .welcome_text{
- text-align: center;
- margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 .landing_pie_img{
-  height: 231px;
-  width: 84%;
+  height: 235px;
+  width: 93%;
 }
 .landing_todo_img{
   height: 235px;
@@ -22,4 +23,11 @@ input{
 }
 .btn{
   height:40% !important;
+}
+.row_space{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.navbar_brand{
+  margin-left: 80px !important;
 }

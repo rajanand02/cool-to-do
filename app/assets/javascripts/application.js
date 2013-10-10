@@ -16,14 +16,6 @@
 //= require flatly/loader
 //= require flatly/bootswatch
 //= require highcharts
-//= require highcharts/highcharts-more
-//= require highcharts/adapters/mootools
-//= require highcharts/adapters/prototype
-//= require highcharts/adapters/standalone
-//= require highcharts/modules/canvas-tools
-//= require highcharts/modules/data
-//= require highcharts/modules/exporting
-//= require highcharts/modules/funnel
 //= require highcharts/themes/grid
 //= require turbolinks
 

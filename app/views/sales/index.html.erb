@@ -1,51 +1,57 @@
-<div class="container">
-  <h1>Listing sales</h1>
-  <div class="row-fluid">
-    <div class="span5">
+<div class = "container">
+  <div class ="row">
+    <div class ="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+      <h1>Sales Report</h1>
+      </div>
+    <div class = "col-xs-12 col-sm-12 col-md-4 col-md-offset-1 row_space">
       <%= pie_chart @sales.map { |s| [s.name, s.price] } %>
     </div>
-    <div class="span7">
+    <div class = "col-xs-12 col-sm-12 col-md-6 row_space">
       <%= bar_chart @sales.map { |s| [s.name, s.price] }%>
     </div>
-  </div><br/>
-  <div class="row-fluid">
-    <div class="span5">
+    <div class = "col-xs-12 col-sm-12 col-md-4 col-md-offset-1 row_space">
       <%= line_chart @sales.map { |s| [s.id, s.number]} %>
     </div>
-    <div class="span7">
+    <div class = "col-xs-12 col-sm-12 col-md-6 row_space">
       <%= column_chart @sales.map { |s| [s.name, s.price] } %>
     </div>
-  </div><br/>
-  <%= area_chart @sales.map { |s| [s.number, s.price] }  %>
+    <div class = "col-xs-12 col-sm-12 col-md-10 col-md-offset-1 row_space">
+      <%= area_chart @sales.map { |s| [s.number, s.price] }  %>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col-xs-12 col-sm-12 col-md-10 col-md-offset-1 row_space">
+      <table class= "table table-hover">
+        <thead>
+          <tr>
+            <th>Number</th>
+            <th>Name</th>
+            <th>Created_at</th>
+            <th>Price</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @sales.each do |sale| %>
+            <tr>
+              <td><%= sale.number %></td>
+              <td><%= sale.name %></td>
+              <td><%= sale.created_at.to_date %></td>
+              <td><%= sale.price %></td>
+              <td><%= link_to 'Show', sale %></td>
+              <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
+              <td><%= link_to 'Destroy', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <%= link_to 'New Sale', new_sale_path %>
+    </div>
+  </div>
 </div>
-<table class= "table table-hover">
-  <thead>
-    <tr>
-      <th>Number</th>
-      <th>Name</th>
-      <th>Created_at</th>
-      <th>Price</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-  <% @sales.each do |sale| %>
-    <tr>
-      <td><%= sale.number %></td>
-      <td><%= sale.name %></td>
-      <td><%= sale.created_at.to_date %></td>
-      <td><%= sale.price %></td>
-      <td><%= link_to 'Show', sale %></td>
-      <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
-      <td><%= link_to 'Destroy', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Sale', new_sale_path %>

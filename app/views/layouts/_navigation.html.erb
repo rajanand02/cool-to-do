@@ -8,12 +8,12 @@
       </button>
     </div>
     <div class="navbar-collapse collapse" id="navbar-main">
-      <%= link_to 'Cool-Todo', root_path, :method => :get, :class => "navbar-brand" %>
+      <%= link_to 'Cool-Todo', root_path, :method => :get, :class => "navbar-brand navbar_brand" %>
       <ul class="nav navbar-nav navbar-right navbar_text">
-          <li><%= link_to 'Home', root_path %> </li>
+        <li><%= link_to 'Home', root_path %> </li>
         <% if !user_signed_in?  %>
           <li><%= link_to 'Sign up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign in', new_user_session_path %></li>
+          <li><%= link_to 'Sign in',"#sign_in", :data => {"toggle" => "modal"} %></li>
         <% end %>
         <% if user_signed_in?  %>
           <li><%= link_to 'Account', edit_user_registration_path %></li>
@@ -23,3 +23,26 @@
     </div>
   </div>
 </div><br/><br/>
+<div id="sign_in" class="modal fade" role="dialog" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Sign in</h2>
+      </div>
+      <div class="modal-body">
+        <div class= "row">
+        <%= form_for("user", :url => user_session_path) do |f| %>
+          <%= f.text_field :email, :placeholder => "Enter Your Email" %>
+          <%= f.password_field :password, :placeholder => "Passsword" %>
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+          <%= f.submit 'Sign in', :class => "btn-success" %>
+          <%= link_to "Forgot your password?", new_password_path('user') %>
+        <% end %>
+
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+

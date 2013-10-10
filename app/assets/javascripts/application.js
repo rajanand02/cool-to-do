@@ -16,10 +16,10 @@
 //= require flatly/loader
 //= require flatly/bootswatch
 //= require highcharts
+//= require highcharts/themes/grid
 //= require highcharts/highcharts-more
 //= require highcharts/modules/exporting
 //= require highcharts/modules/heatmap
 //= require highcharts/modules/data
-//= require highcharts/themes/grid
 //= require turbolinks
 

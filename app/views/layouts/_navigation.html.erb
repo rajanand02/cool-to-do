@@ -12,7 +12,7 @@
       <ul class="nav navbar-nav navbar-right navbar_text">
         <li><%= link_to 'Home', root_path %> </li>
         <% if !user_signed_in?  %>
-          <li><%= link_to 'Sign up', new_user_registration_path %></li>
+          <li><%= link_to 'Sign up', "#sign_up", :data => {"toggle" => "modal"}%></li>
           <li><%= link_to 'Sign in',"#sign_in", :data => {"toggle" => "modal"} %></li>
         <% end %>
         <% if user_signed_in?  %>
@@ -27,20 +27,43 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h2>Sign in</h2>
+        <h2 class = "sign_in_header">Sign in</h2>
       </div>
       <div class="modal-body">
         <div class= "row">
-        <%= form_for("user", :url => user_session_path) do |f| %>
-          <%= f.text_field :email, :placeholder => "Enter Your Email" %>
-          <%= f.password_field :password, :placeholder => "Passsword" %>
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
-          <%= f.submit 'Sign in', :class => "btn-success" %>
-          <%= link_to "Forgot your password?", new_password_path('user') %>
-        <% end %>
-
+          <div class = "col-xs-8 col-sm-8 col-md-8 col-md-offset-2 modal_sign_in">
+            <%= form_for("user", :url => user_session_path) do |f| %>
+              <%= f.text_field :email, :autofocus => true, :placeholder => "Enter Your Email"%>
+              <%= f.password_field :password, :placeholder => "Password" %>
+              <%= f.check_box :remember_me, :class => "remember_me" %>
+              <%= f.label :remember_me %>
+              <%= f.submit 'Sign in', :class => "btn btn-success" %>
+              <%= link_to "Forgot your password?", new_password_path('user') %>
+            <% end %>
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
+</div>
+<div id="sign_up" class="modal fade" role="dialog" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class = "sign_in_header">Sign up</h2>
+      </div>
+      <div class="modal-body">
+        <div class= "row">
+          <div class = "col-xs-8 col-sm-8 col-md-8 col-md-offset-2 modal_sign_in">
+            <%= form_for("user", :url =>user_registration_path) do |f| %>
+              <%= f.text_field :email, :placeholder => "Enter your Email", :autofocus => true %>
+              <%= f.password_field :password, :placeholder => "Password"%>
+              <%= f.password_field :password_confirmation, :placeholder => "Confirm Password",:required => true %>
+              <%= f.submit 'Sign up', :class => "btn btn-success"%>
+              <%= link_to "Sign in", new_user_session_path%>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
